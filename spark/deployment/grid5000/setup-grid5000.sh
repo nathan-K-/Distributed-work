@@ -8,17 +8,18 @@ WORKERS=(
         'lyon-2'
 )
 NODES=(
-		'lyon-0'
-        'lyon-1'
-        'lyon-2'
+	'lyon-0'
+	'lyon-1'
+	'lyon-2'
 )
+
 DOCKER_IMAGE="gettyimages/spark:2.2.0-hadoop-2.7"
 
 echo -n "Password: "
 read -s PWD
 echo
 
-docker-g5k create-cluster --g5k-username "nkienlen" --g5k-password "$PWD" --g5k-image "jessie-x64-base" --g5k-reserve-nodes "lyon:3"
+docker-g5k create-cluster --g5k-username "nkienlen" --g5k-password "$PWD" --g5k-image "jessie-x64-base" --g5k-reserve-nodes "lyon:${#NODES[@]}"
 
 for NODE in ${NODES[*]}; do
         docker-machine ssh $NODE "sudo apt update && sudo apt install -y --force-yes docker-ce=17.09.1~ce-0~debian"
