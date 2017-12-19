@@ -35,7 +35,8 @@ start-aws: setup-aws prepare-swarm-aws work-aws
 
 
 start-grid5000-pytest:
-	bash -C ./grid5000/projets/pyTest/starter.sh $(SOURCE-GRID)
+	bash -C ./projets/pyTest/starter.sh $(SOURCE-GRID)
+
 #swarmWork:
 #./bin/spark-submit \
 --master spark://master:7077 \

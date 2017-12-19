@@ -1,5 +1,5 @@
 source $1
-
+docker-machine scp -r /home/nathan/DEV/Distributed-work/spark/projets/ $MANAGER:/root/
 PROJET="pyTest/docker-compose.yml"
 
 # Setup and start the work
@@ -10,7 +10,7 @@ done
 
 # images should be downloaded automatically
 
-docker-machine scp -r /home/nathan/DEV/Distributed-work/spark/grid5000/projets/ $MANAGER:/root/
+docker-machine scp -r ./projets/ $MANAGER:/root/
 docker-machine ssh $MANAGER "docker stack deploy --compose-file /root/projets/$PROJET sparkstack"
 
 # docker-machine ssh $MANAGER "docker stack rm sparkstack"
