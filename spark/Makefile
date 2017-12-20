@@ -27,8 +27,6 @@ work-aws:
 	bash -C ./work.sh $(SOURCE-AWS)
 
 
-
-# Final (!)
 start-grid5000: setup-grid5000 prepare-swarm-grid5000 work-grid5000
 
 start-aws: setup-aws prepare-swarm-aws work-aws
