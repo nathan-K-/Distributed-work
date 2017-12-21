@@ -1,0 +1,2 @@
+- ALSTest-100k is collaborative filtering for the dataset "movieLens 100k"
+- ALSTest-big is also CF, but for the two biggest datasets. (as the syntax of the data is not the same)
